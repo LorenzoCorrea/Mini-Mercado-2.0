@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meu Minimercado</title>
+    <link rel="stylesheet" href="css/syle.css"> 
+    <table>
+        <tr>
+            <td><img src="images/unnamed.png" alt="logo" height="100"></td>
+            <td><h1>Meu Mini Mercado</h1></td>
+        </tr>
+    </table>
+</head>
+<body>
+    <header>
+        <nav>
+            <p>Navegue em nosso site:</p>
+            <a href="index.html">Home</a> |
+            <a href="Sobre.htm">Sobre</a> |
+            <a href="Servicos.html">Serviços</a> | 
+            <a href="cadastro.html">Cadastro</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Nossos Produtos:</h1>
+
+        <h3>Frutas:</h3>
+        <ul>
+            <li>Maçã: R$7,14 (R$14,28/kg)</li>
+            <button class="adicionar-ao-carrinho" data-nome="Maçã" data-preco="7.14">Adicionar ao Carrinho</button>
+            <img src="https://static.itdg.com.br/images/auto-auto/5391eab33af911d9bad8e95a8b3a57f1/shutterstock-290834552.jpg" alt="Maçã" height="200">           
+            <br>
+            Maçãs frescas e suculentas, perfeitas para um lanche rápido e nutritivo. Disponíveis em diversas variedades.
+            <hr>
+
+            <li>Banana: R$11,59 (R$8,92/kg)</li>
+            <button class="adicionar-ao-carrinho" data-nome="Banana" data-preco="11.59">Adicionar ao Carrinho</button>
+            <img src="https://p2.trrsf.com/image/fget/cf/1200/630/middle/images.terra.com/2024/09/24/554914180-bananas-1.jpg" alt="Banana" height="160">
+            <br>
+            Bananas maduras e deliciosas, perfeitas para um lanche rápido e nutritivo. Fonte de potássio e vitaminas essenciais.
+            <hr>
+
+            <li>Tangerina: R$6,99 (R$13,98/kg)</li>
+            <button class="adicionar-ao-carrinho" data-nome="Tangerina" data-preco="6.99">Adicionar ao Carrinho</button>
+            <img src="https://image.tuasaude.com/media/article/ym/xa/bergamota_3737_l.jpg" alt="Berga" height="200">
+            <br>
+            Tangerinas suculentas e cheias de sabor, ideais para refrescar seus dias. Uma explosão de vitamina C em cada fatia.
+        </ul>
+
+        <h3>Verduras:</h3>  
+        <ul> 
+            <li>Tomate</li>
+            <button class="adicionar-ao-carrinho" data-nome="Tomate" data-preco="5.00">Adicionar ao Carrinho</button> <img src="https://www.yarabrasil.com.br/globalassets/blog-yara-nutre_tomate_640x420px-5.png" alt="Tomate" height="199">
+            <br>
+            Tomates frescos e saborosos, perfeitos para suas saladas e molhos. Um ingrediente essencial para uma alimentação saudável.
+            <hr> 
+
+            <li>Cebola</li>
+            <button class="adicionar-ao-carrinho" data-nome="Cebola" data-preco="3.00">Adicionar ao Carrinho</button> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3UR9_gSxeo-pT6GN6Kd_r8ubxNF_dG68fVA&s" alt="Cebola" height="">
+            <br>
+            Cebolas crocantes e com sabor intenso, ideais para temperar seus pratos. Um clássico da culinária.
+            <hr>
+
+            <li>Cenoura</li>
+            <button class="adicionar-ao-carrinho" data-nome="Cenoura" data-preco="4.00">Adicionar ao Carrinho</button> <img src="https://tribunadejundiai.com.br/wp-content/uploads/2022/06/Beneficios-da-cenoura-1000x600.jpg" alt="Cenoura" height="190">
+            <br>
+            Cenouras frescas e nutritivas, perfeitas para saladas e sucos. Uma fonte rica em betacaroteno.
+            <hr>
+        </ul>  
+
+        <h2>Carrinho de Compras</h2>
+        <ul id="carrinho-itens"></ul> 
+        <p>Total: R$ <span id="carrinho-total">0</span></p>
+        <button id="finalizar-compra">Finalizar Compra</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Meu Minimercado. Todos os direitos reservados.</p>
+        <p>Contato: meuminimercado@email.com</p>
+    </footer>
+
+    <script>
+        // Carrinho de compras
+        const carrinhoItens = document.getElementById('carrinho-itens');
+        const carrinhoTotal = document.getElementById('carrinho-total');
+        const finalizarCompra = document.getElementById('finalizar-compra');
+        let carrinho = []; // Array para armazenar os itens do carrinho
+
+        // Função para adicionar item ao carrinho
+        function adicionarAoCarrinho(nome, preco) {
+          carrinho.push({ nome, preco });
+          atualizarCarrinho();
+        }
+
+        // Função para atualizar o carrinho
+        function atualizarCarrinho() {
+          carrinhoItens.innerHTML = '';
+          let total = 0;
+          carrinho.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
+            carrinhoItens.appendChild(li);
+            total += item.preco;
+          });
+          carrinhoTotal.textContent = total.toFixed(2);
+        }
+
+        // Adicionar evento aos botões "Adicionar ao Carrinho"
+        const botoesAdicionar = document.querySelectorAll('.adicionar-ao-carrinho');
+        botoesAdicionar.forEach(botao => {
+          botao.addEventListener('click', () => {
+            const nome = botao.dataset.nome;
+            const preco = parseFloat(botao.dataset.preco);
+            adicionarAoCarrinho(nome, preco);
+          });
+        });
+
+        // Evento para finalizar a compra (apenas um exemplo)
+        finalizarCompra.addEventListener('click', () => {
+          alert(`Compra finalizada! Total: R$ ${carrinhoTotal.textContent}`);
+          carrinho = [];
+          atualizarCarrinho();
+        });
+    </script>
+</body>
+</html>

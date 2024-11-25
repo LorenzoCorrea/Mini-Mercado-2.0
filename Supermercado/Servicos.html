@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meu Minimercado</title>
+    <table>
+        <tr>
+            <td><img src="images/unnamed.png" alt="logo" height="100"></td>
+            <td><h1>Meu Mini Mercado</h1></td>
+        </tr>
+        <link rel="stylesheet" href="css/syle.css">
+    </table>
+</head>
+<body>
+    <header>
+        <nav>
+            <p>Navegue em nosso site:</p>
+            <a href="index.html">Home</a> |
+            <a href="Sobre.htm">Sobre</a> |
+            <a href="Produtos.html">Produtos</a> |
+            <a href="cadastro.html">Cadastro</a>
+
+        </nav>
+    </header>
+    <h1>Nosso Diferencial: </h1>
+    <ul>
+        <li>Entrega em domicílio: Ofereça a comodidade de entregar as compras na casa do cliente.</li>
+        <li>Encomendas especiais: Permita que os clientes façam pedidos de produtos específicos que não estão disponíveis nas prateleiras.</li>
+        <li>Montagem de cestas de presentes: Crie cestas personalizadas para diversas ocasiões.</li>
+        <li>Pagamento por aplicativo: Facilite as compras com opções de pagamento digitais. </li>
+        <li>Programa de fidelidade: Recompense clientes frequentes com descontos e promoções exclusivas. </li>
+        <li>Parceria com outros estabelecimentos: Ofereça serviços complementares, como limpeza ou pequenos reparos.</li>
+    </ul>
+
+    <main>
+        <h2>Nossos Destaques</h2>
+
+        <h2>Agendamento</h2>
+
+        <div class="form-group">
+            <label for="tipo-servico">Tipo de serviço:</label>
+            <select class="form-control" id="tipo-servico">
+                <option value="retirada">Retirada no local</option>
+                <option value="entrega">Tele-entrega</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="data-agendamento">Data e hora:</label>
+            <input type="datetime-local" class="form-control" id="data-agendamento" required>
+        </div>
+
+        <div class="form-group" id="campo-endereco" style="display: none;">
+            <label for="endereco-entrega">Endereço de entrega:</label>
+            <input type="text" class="form-control" id="endereco-entrega" placeholder="Digite o endereço de entrega">
+            <label for="cep-entrega">CEP:</label>
+            <input type="text" class="form-control" id="cep-entrega" placeholder="Digite o CEP">
+            <label for="cidade-entrega">Cidade:</label>
+            <input type="text" class="form-control" id="cidade-entrega" placeholder="Digite a cidade">
+        </div>
+
+
+        <button type="button" class="btn btn-primary" id="agendar-servico">Agendar</button>
+
+        <div>
+            <p id="mensagem-agendamento"></p> 
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Meu Minimercado. Todos os direitos reservados.</p>
+        <p>Contato: meuminimercado@email.com</p>
+    </footer>
+
+    <script src="scripts/script.js"></script> 
+</body>
+</html>

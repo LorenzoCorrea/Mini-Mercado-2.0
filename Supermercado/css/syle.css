@@ -1,0 +1,77 @@
+/* style.css */
+body {
+    font-family: 'Arial', sans-serif; /* Fonte mais moderna e legível */
+    background-color: #f0f5f5; /* Azul claro suave para o fundo */
+    color: #333; /* Cor de texto escura para contraste */
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #007bff; /* Azul vibrante para o título */
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #007bff; /* Azul vibrante para botões */
+    border-color: #007bff;
+    transition: background-color 0.3s ease; /* Transição suave na cor do botão */
+}
+
+.btn-primary:hover {
+    background-color: #0069d9; /* Azul mais escuro ao passar o mouse */
+    border-color: #0062cc;
+}
+
+/* Estilos para a seção de agendamento */
+#agendamento h2 {
+    margin-top: 30px;
+    color: #007bff; /* Azul vibrante para o título da seção */
+}
+
+/* Estilos para o carrossel */
+.carousel-inner {
+    height: 300px;
+}
+
+.carousel-item img {
+    object-fit: cover;
+}
+
+/* Estilos para o header */
+header {
+    background-color: #fff; /* Fundo branco para o header */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil no header */
+}
+
+nav a {
+    color: #333;
+    margin-right: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transição suave na cor do link */
+}
+
+nav a:hover {
+    color: #007bff; /* Azul vibrante ao passar o mouse sobre o link */
+}
+
+/* Adicione este estilo para criar espaçamento */
+main {
+    margin-top: 350px; /* Ajuste o valor conforme necessário */
+}
+
+/* Estilos adicionais para outros elementos */
+footer {
+    background-color: #333; /* Fundo escuro para o footer */
+    color: #fff; /* Texto branco para contraste */
+    padding: 20px;
+    text-align: center;
+}
